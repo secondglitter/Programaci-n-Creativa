@@ -1,20 +1,32 @@
+#Crea un elemento gráfico/visual compuesto. Defina una función que dibuje estas instrucciones.
+#Utiliza su función para hacer una composición con 3 o más ejemplos del elemento.
+
+#Para los colores de las estrellas
+# Blanco-(255)  Amarrillo-(255,255,0)
+
+#Para los tamaños de las estrellas (x,y,10,15,5) o (x,y,5,10,5)
 
 def setup():
-    size(980, 980)
+    size(960, 960)
     background(0)
     noche_estrellada()
 
 def noche_estrellada():
-    for _ in range(random_int (100,1000)):
-        x = random(100, 900)
-        y = random(100, 600)
-        fill(255,255,0)
-        star(x, y, 10,15, 5)
     estrella_fugaz()
     fill(240)
     circle(800,200, 200)
     fill(0)
     circle(770,170, 200)
+    for _ in range(random_int (40,45)):
+        x = random(20, 450)
+        y = random(10, 750)
+        fill(255)
+        star(x, y, 5,10, 5)
+    for _ in range(random_int (40,45)):
+        x = random(460, 900)
+        y = random(10, 750)
+        fill(255)
+        star(x, y, 5,10, 5)
           
 def estrella_fugaz ():
     for _ in range(random_int(2,5)):
@@ -25,8 +37,8 @@ def estrella_fugaz ():
         line(x, y, x - 80, y - 30)
         line(x, y + 5, x - 40, y - 10)
         no_stroke()
-        fill(255, 255, 0)
-        star(x, y, 10, 15, 5)
+        fill(255)
+        star(x, y, 5, 10, 5)
  
 def star (cx, cy, ra, rb, np, start_ang=0):
     step = TWO_PI / np
