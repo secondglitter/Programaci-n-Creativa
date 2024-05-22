@@ -1,30 +1,52 @@
 
 def setup():
     size(980, 980)
-    background(255)
+    background(240)
     
     for x in range ( 100, 1000, 100):
         for y in range (100, 800, 100):
             n = random_int(1,6)
             print(n, x, y)
             if n <= 2:
-                fill(255)
-                rect_mode(CENTER)
-                square(x,y, 50)
-                fill(0)
-                rect_mode(CENTER)
-                square(x,y, 30)
+                if n == 1:
+                    fill(255)
+                    rect_mode(CENTER)
+                    square(x,y, 50)
+                    fill(0)
+                    rect_mode(CENTER)
+                    square(x,y, 30)
+                else:
+                    fill(0)
+                    rect_mode(CENTER)
+                    square(x,y, 50)
+                    fill(255)
+                    rect_mode(CENTER)
+                    square(x,y, 30)
             elif n <= 4:
-                fill(255)
-                circle(x, y, 50)
-                fill(0)
-                circle(x, y, 30)
+                if n == 3:
+                    fill(255)
+                    circle(x, y, 50)
+                    fill(0)
+                    circle(x, y, 30)
+                else:
+                    fill(0)
+                    circle(x, y, 50)
+                    fill(255)
+                    circle(x, y, 30)
             else:
-                p = random_int (5, 8)
-                fill(0)
-                star(x,y, 10, 30, p)
-                fill(255)
-                star(x,y, 5, 15, p)
+                if n == 5:
+                    p = random_int (5, 8)
+                    fill(0)
+                    star(x,y, 10, 30, p)
+                    fill(255)
+                    star(x,y, 5, 15, p)
+                else:
+                    p = random_int (5, 8)
+                    fill(255)
+                    star(x,y, 10, 30, p)
+                    fill(0)
+                    star(x,y, 5, 15, p)
+
 
 def star (cx, cy, ra, rb, np, start_ang=0):
     step = TWO_PI / np
